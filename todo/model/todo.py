@@ -7,6 +7,11 @@ class Todo:
         self.tags: list[str] = []
     def mark_completed(self):
         self.completed: bool = True
+    def add_tag(self, tag: str):
+        if  tag not in self.tags:
+            self.tags.append(tag)
+
+
 
 
 
