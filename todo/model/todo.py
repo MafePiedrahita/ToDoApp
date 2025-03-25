@@ -25,6 +25,12 @@ class TodoBook:
         return [todo for todo in self.todos.values() if not todo.completed]
     def completed_todos(self) -> list[Todo]:
         return [todo for todo in self.todos.values() if todo.completed]
+    def tags_todo_count(self) -> dict[str, int]:
+        tag_count: dict[str, int] = {}
+        for todo in self.todos.values():
+            for tag in todo.tags:
+                tag_count[tag] = tag_count.get(tag, 0) + 1
+        return tag_count
 
 
 
