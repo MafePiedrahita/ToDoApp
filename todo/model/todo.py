@@ -13,6 +13,13 @@ class Todo:
     def __str__(self) -> str:
         return f"{self.code_id} - {self.title}"
 
+class TodoBook:
+    def __str__(self):
+        self.todos: dict[int,Todo] = {}
+
+
+
+
 
 
 
