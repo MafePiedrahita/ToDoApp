@@ -16,6 +16,18 @@ class Todo:
 class TodoBook:
     def __str__(self):
         self.todos: dict[int,Todo] = {}
+    def add_todo(self, title: str, description: str) -> int:
+        code_id = len(self.todos) + 1
+        todo = Todo(code_id, title, description)
+        self.todos[code_id] = todo
+        return code_id
+    def pending_todos(self) -> list[Todo]:
+        return [todo for todo in self.todos.values() if not todo.completed]
+
+
+
+
+
 
 
 
